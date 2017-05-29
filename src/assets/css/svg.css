@@ -1,0 +1,23 @@
+
+
+
+
+#try2 path{
+    stroke: white;
+    stroke-width: 13px;
+    fill: transparent;
+    stroke-dasharray: 2700;
+      stroke-dashoffset:-2700;
+    transition: stroke-dashoffset 4s ease 2s, fill 2s ease ;
+
+
+
+}
+     #try2.check path{
+
+    fill: white;
+
+      stroke-dashoffset:0;
+    transition: stroke-dashoffset 4s ease, fill 1s ease 4s;
+
+}

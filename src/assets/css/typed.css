@@ -1,0 +1,42 @@
+h6{
+
+
+  white-space: nowrap;
+  overflow: hidden;
+  width:100%;
+  animation: type 4s steps(60, end);
+}
+
+h6:nth-child(2){
+  margin-top: -5px;
+  animation: type2 8s steps(60, end);
+}
+h6:nth-child(3){
+  margin-top: -5px;
+  animation: type2 15s steps(60, end);
+}
+
+
+
+
+span{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{
+  from { width: 0; }
+}
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; }
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+::selection{
+  background: black;
+}

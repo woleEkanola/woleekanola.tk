@@ -14,7 +14,10 @@ class App extends Component {
   constructor(){
     super()
 this.state={
-classs: 'hide'
+classs: 'hide',
+num: 0,
+text: ['Christian', 'Web Developer', 'Husband', 'Graphic Artist', 'Nigerian', 'Father',' Printer', 'Business Man'],
+useText: 'Web Developer'
 }
   }
 
@@ -25,7 +28,13 @@ menuToggle(){
     }else{
         this.setState({classs: 'hide'})
     }
+}
 
+
+usetText(x){
+  var text= this.state.text[x]
+  this.setState({useText: text})
+  console.log('useText')
 }
 
   render() {
@@ -41,6 +50,8 @@ menuToggle(){
 
         <Route path='/about-me' render={() => (
           <About
+          useText={ this.state.useText}
+          usetText= {this.usetText.bind(this)}
           classs= {this.state.classs}
           menuToggle= {this.menuToggle.bind(this)}/>
         )} />

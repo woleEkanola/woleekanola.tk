@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+body{
+
+    background-color: #DBDBEA;
+    font-family: ;
+}
+div.tabContent{
+  background-color: #fff;
+  margin-top: -20px;
+  padding: 30px;
+}
+li.tabs-menu-item.is-active{
+background-color: #fff;
+color: black;
+ }
+
+div.tabs li{
+  display: inline-block;
+  padding: 25px;
+  margin: 5px 5px 0 0;
+  color: white;
+  cursor: pointer;
+  }
+
+
+  div.tabs ul {
+background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background-color:#664C00;
+  opacity: 0.8;
+    text-align: center;
+  }
+div.container-fluid{
+  width:  65%;
+  height: 400px;
+}
+
+div.banner h1{
+  z-index: 1000;
+  color: white;
+  position: absolute;
+  margin-top: 90px;
+  top: 0;
+  left:40%;
+  font-family: 'Fjalla One', sans-serif;
+font-size: 50px;
+text-shadow: 4px 2px 5px #000;
+}
+
+div.banner{
+width: 100%;
+height: 250px;
+overflow: hidden;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 50px;
+}
+img.pgBanner {
+width: 100%;
+
+}
+div.tabContent{
+display: flex;
+
+}
+
+div.tabContent div{
+background-color: green;
+flex-wrap: wrap
+
+}
+div.container-fluid h3{
+  color: #664C00;
+  text-align: center;
+  margin-bottom: 50px;
+}

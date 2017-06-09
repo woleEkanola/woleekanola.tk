@@ -2,10 +2,73 @@ import React, { Component } from 'react';
 import Menu from '../assets/components/menu.js'
 import SocialIcons from '../assets/components/socials.js'
 import '../assets/css/portfolio.css'
-import Tabs from 'react-simpletabs'
+
 
 class Portfolio extends Component {
+constructor(){
+  super()
+  this.state= {
+    search: ''
+  }
+}
+
+componentDidMount(){
+  if(this.props.portfolio){
+    this.props.getTags()
+  }else{
+    console.log('load Tags')
+  }
+
+}
+
+
   render() {
+    let select;
+    let allPortfolio;
+var img= Portfolio.img
+var self= this
+
+
+    if(this.props.portfolio){
+      allPortfolio= self.props.portfolio.map(Portfolio =>{
+
+        var x =  Portfolio.postTags.map(Tag =>{
+          if(Tag){
+            return(<p key= {Tag}> {Tag} </p>)
+          }
+
+              })
+
+        return(
+          <div key= {Portfolio.id}>
+        <img  src= {Portfolio.postImage}  />
+
+          <h1>{Portfolio.titleText}</h1>
+
+{x}
+            </div>
+        )
+
+      });
+
+    }
+    var tags;
+var tagTitle;
+
+    if(this.props.tags){
+      tagTitle=  <h3> Select a tag to view by category</h3>
+      tags = this.props.tags.map(Tag => {
+        return(
+          <p onClick= {this.props.tagClassToggle} key= {Tag} > {Tag} </p>
+        )
+      })
+    }else{
+      tagTitle= <h3 onClick= {this.props.getTags} className= 'clickIt'> CLick here to view by category</h3>
+    }
+
+
+
+
     return (
 
       <div>
@@ -14,55 +77,29 @@ class Portfolio extends Component {
 
 
       <div className= 'banner'>
-      <img  src={require('../assets/img/coded.jpg')} className="pgBanner" alt= 'Page Banner' />
-<div>
+
+
       <h1> My Portfolio </h1>
+      <p> Over the years I have handled several projects for the different clients, <br />
+      below is a collection of some of my recent projects. </p>
+</div>
+<div className= 'bannerNext'>
+{ tagTitle}
+<div className= 'tagCase'>
+{tags}
 </div>
       </div>
 
-<div className= 'container-fluid'>
-
-<h3> Over the years I have handled several projects for the different clients,
-below is a collection of some of my recent projects. </h3>
-
-
-<Tabs id= 'tab'>
-<Tabs.Panel title='All'>
-<div className= 'tabContent'>
-  <div>
-  <h1>Title</h1>
-<img  src={require('../assets/img/portfolio2.jpg')} className="" alt= 'menu' onClick= {this.props.menuToggle} />
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  </div>
-  <div>
-  <h1>Title</h1>
-  <img  src={require('../assets/img/portfolio2.jpg')} className="" alt= 'menu' onClick= {this.props.menuToggle} />
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  </div>
-  <div>
-  <h1>Title</h1>
-<img  src={require('../assets/img/portfolio2.jpg')} className="" alt= 'menu' onClick= {this.props.menuToggle} />
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  </div>
-
+<div className= 'contayner'>
+<div className= 'portfolioContent'>
+{allPortfolio}
 </div>
-</Tabs.Panel>
-<Tabs.Panel title='Website'>
-<div className= 'tabContent'> Websites</div>
-</Tabs.Panel>
-<Tabs.Panel title='Web Apps'>
-<div className= 'tabContent'> Web Apps</div>
-</Tabs.Panel>
-<Tabs.Panel title='Graphic Designs '>
-<div className= 'tabContent'> Graphic Designs </div>
-</Tabs.Panel>
-<Tabs.Panel title='Prints '>
-<div className= 'tabContent'> Prints </div>
-</Tabs.Panel>
-</Tabs>
-            </div>
+</div>
+
 
 <SocialIcons />
+
+
 
 
 </div>

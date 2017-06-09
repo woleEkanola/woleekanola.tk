@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 body{
 
-    background-color: #DBDBEA;
+    background-color: #202020;
     font-family: ;
 }
 div.tabContent{
-  background-color: #fff;
-  margin-top: -20px;
-  padding: 30px;
+
 }
 li.tabs-menu-item.is-active{
 background-color: #fff;
@@ -31,46 +29,130 @@ box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
     text-align: center;
   }
 div.container-fluid{
-  width:  65%;
-  height: 400px;
+  width:  80%;
+
 }
 
 div.banner h1{
-  z-index: 1000;
-  color: white;
-  position: absolute;
-  margin-top: 90px;
-  top: 0;
-  left:40%;
-  font-family: 'Fjalla One', sans-serif;
-font-size: 50px;
-text-shadow: 4px 2px 5px #000;
+
+margin-top: 120px;
+font-size: 90px;
 }
 
+
 div.banner{
+  font-family: 'Fjalla One', sans-serif;
+text-align: center;
+
+text-shadow: 4px 2px 5px #000;
+color: white;
 width: 100%;
-height: 250px;
+background-image: url(../img/portfolioBG.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position: center;
+height: 350px;
 overflow: hidden;
 margin-left: auto;
 margin-right: auto;
+box-shadow: 4px 4px 5px #000;
 margin-bottom: 50px;
-}
-img.pgBanner {
-width: 100%;
 
 }
-div.tabContent{
-display: flex;
-
-}
-
-div.tabContent div{
-background-color: green;
-flex-wrap: wrap
-
-}
-div.container-fluid h3{
-  color: #664C00;
+div.aboveContent {
   text-align: center;
-  margin-bottom: 50px;
+  padding: 50px 90px;
+}
+
+div.contayner{
+  width: 100%;
+  background-color: #202020;
+  margin-top: -20px;
+  padding: 30px;
+}
+div.portfolioContent{
+width: 90%;
+margin-right: auto;
+margin-left: auto;
+background-color: #262626;
+padding: 30px;
+color: white;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) ) ;
+grid-gap: 10px;
+font-family: 'Fjalla One', sans-serif;
+text-align: center;
+}
+
+div.bannerNext{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  color: grey;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+
+div.tagCase{
+  width: 70%;
+  margin: auto;
+  margin-bottom: 30px;
+
+  }
+  div.tagCase p{
+    display: inline-flex;
+    padding: 7px 10px;
+    background-color: #262626;
+    margin: 5px;
+  }
+
+  div.tagCase p:hover{
+    box-shadow: 3px 2px 3px #000;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  div.tagCase p.active{
+    box-shadow: 3px 2px 3px #000;
+
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  h3.clickIt{
+    cursor: pointer;
+  }
+
+div.portfolioContent img{
+width: 100%;
+margin-bottom: 10px;
+}
+ div.portfolioContent div{
+   background-color: #201E1F;
+   padding: 20px;
+
+ }
+div.portfolioContent h1{
+  font-size: 30px;
+}
+
+ div.portfolioContent p{
+   font-size: 12px;
+   display: inline-flex;
+   padding: 5px;
+   background-color: #262626;
+   margin-right:  5px;
+   margin-bottom: 0;
+   color: grey;
+ }
+
+
+div.tabContent h1{
+
+}
+
+
+
+div.tabContent p{
+
 }
